@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 double matrix[3][3];
-int matrix2[2][2], m, sub, mult1, mult2, mult3, mult4;
+int matrix2[2][2], m, sub, mult[2][2];
 
 int squarem(void)
 {
@@ -13,10 +13,10 @@ int squarem(void)
 			scanf("%d",&matrix2[i][j]);
 		}
 	}
-	mult1 = matrix2[0][0] * matrix2[0][0] + matrix[0][1] * matrix[1][0];
-	mult2 = matrix2[0][1] * matrix2[0][0] + matrix[0][1] * matrix[1][1];
-	mult3 = matrix2[1][0] * matrix2[0][0] + matrix[1][1] * matrix[1][0];
-	mult4 = matrix2[1][0] * matrix2[0][1] + matrix[1][1] * matrix[1][1];
+	mult[0][0] = matrix2[0][0] * matrix2[0][0] + matrix[0][1] * matrix[1][0];
+	mult[0][1] = matrix2[0][1] * matrix2[0][0] + matrix[0][1] * matrix[1][1];
+	mult[1][0] = matrix2[1][0] * matrix2[0][0] + matrix[1][1] * matrix[1][0];
+	mult[1][1] = matrix2[1][0] * matrix2[0][1] + matrix[1][1] * matrix[1][1];
 	for(int i = 0; i < 2; i++)
 	{
 		printf("\n");
@@ -24,6 +24,16 @@ int squarem(void)
 		for(int j = 0; j < 2; j++)
 		{
 			printf(".%d.",matrix2[i][j]);
+		}
+
+	}
+	for(int i = 0; i < 2; i++)
+	{
+		printf("\n");
+		
+		for(int j = 0; j < 2; j++)
+		{
+			printf(".%d.",mult[i][j]);
 		}
 
 	}
