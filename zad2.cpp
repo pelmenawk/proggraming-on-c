@@ -13,10 +13,13 @@ int squarem(void)
 			scanf("%d",&matrix2[i][j]);
 		}
 	}
-	mult[0][0] = matrix2[0][0] * matrix2[0][0] + matrix[0][1] * matrix[1][0];
-	mult[0][1] = matrix2[0][1] * matrix2[0][0] + matrix[0][1] * matrix[1][1];
-	mult[1][0] = matrix2[1][0] * matrix2[0][0] + matrix[1][1] * matrix[1][0];
-	mult[1][1] = matrix2[1][0] * matrix2[0][1] + matrix[1][1] * matrix[1][1];
+	 for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            for (int k = 0; k < 2; k++) {
+                mult[i][j] += matrix2[i][k] * matrix2[k][j];
+            }
+        }
+    }
 	for(int i = 0; i < 2; i++)
 	{
 		printf("\n");
@@ -64,4 +67,3 @@ int main(void)
 	printf("\nmain = %d\nsub = %d\n", m, sub);
 	squarem();
 }
-
